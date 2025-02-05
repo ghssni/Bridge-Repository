@@ -1,10 +1,10 @@
-'''
-Script ini digunakan untuk otomasi pembuatan folder pada url google drive 
-sesuai nama tim yang ada pada table spreadsheet
 
-Copy code ini dan jalankan pada app script di spreadsheet:
-    - Extension -> apps script
-'''
+// Script ini digunakan untuk otomasi pembuatan folder pada url google drive 
+// sesuai nama tim yang ada pada table spreadsheet
+
+// Copy code ini dan jalankan pada app script di spreadsheet:
+//     - Extension -> apps script
+
 
 function createFoldersFromSheet() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
