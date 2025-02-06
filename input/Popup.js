@@ -1,3 +1,13 @@
+document.getElementById("startButton").addEventListener("click", function () {
+    console.log("Tombol Start Auto Input diklik");
+    chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        function: autoFillTeams,
+      });
+    });
+  })
+  
 document.getElementById("start").addEventListener("click", async () => {
     const teamNames = await getTeamDataFromSheet();
     for (const name of teamNames) {
@@ -7,7 +17,7 @@ document.getElementById("start").addEventListener("click", async () => {
   });
   
   async function getTeamDataFromSheet() {
-    const url = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+    const url = "https://script.google.com/macros/s/AKfycbxasB5GapyOCqE8lpZ465S2qMlIMKs3rE_uflEOcJ3dzYh6KI_gHgnHSuUPlYMRor26oA/exec";
     const response = await fetch(url);
     const data = await response.json();
     return data;
